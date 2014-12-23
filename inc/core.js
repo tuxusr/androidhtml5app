@@ -1,16 +1,36 @@
 // carrega variáveis
+var nomeApp = "Meu App";
 $( document ).ready(function() {
-	$("title").html("Meu App");
-	$("#projname").html("Meu app");
+	$("title").html(nomeApp);
+	$("#projname").html(nomeApp);
 });
 
 // links
-$("#servicos").click(function() { abrePagina("servicos"); });
+$("#capa").click(function() { 
+    abrePagina("capa"); 
+	$("#projname").html(nomeApp);
+});
+$("#agenda").click(function() { 
+    abrePagina("agenda"); 
+	$("#projname").html(nomeApp+" &raquo; Agenda");
+});
+$("#clientes").click(function() { 
+    abrePagina("clientes"); 
+	$("#projname").html(nomeApp+" &raquo; Clientes");
+});
+$("#financas").click(function() { 
+    abrePagina("financas"); 
+	$("#projname").html(nomeApp+" &raquo; Finan&ccedil;as");
+});
+$("#servicos").click(function() { 
+    abrePagina("servicos"); 
+	$("#projname").html(nomeApp+" &raquo; Servi&ccedil;os");
+});
 
 // teste com função usando json para capturar, via api, dados armazenados na mongolab
 function listabancos() {
 	$("#div_listabancos").html("Carregando...");
-    $.getJSON( "https://api.mongolab.com/api/1/databases/cadastros/collections/servicos?apiKey=vsdj4BRnrA9BBDoG1kqTnpB4dZlXsy8N", function( data ) {
+    $.getJSON( "https://api.mongolab.com/api/1/databases/cadastros/collections/servicos?apiKey=8nZcOZ7R2GL9ug6DuutJxxm8VspHmVDy", function( data ) {
         var items = [];
         var contador = 0;
         $.each( data, function( key, val ) {

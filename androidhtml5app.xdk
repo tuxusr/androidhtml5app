@@ -5,13 +5,16 @@
       "type": "Import",
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "",
-      "projectGuid": "36a455e7-2fb8-47d0-965e-bedacc825fb0",
-      "lastModifiedDate": 1419334978660,
-      "creationDate": 1419334978593
+      "projectGuid": "ce08e51b-b171-4c8c-bb31-c6fe85f86f2a",
+      "lastModifiedDate": 1419425227789,
+      "creationDate": 1419425227757
     },
     "sourceDirectory": "",
     "cordovaPluginsDirectory": "plugins",
+    "gameAssetDirectory": "asset",
+    "gameMetadata": {},
     "startFile": "index.html",
+    "projectTags": [],
     "projectFiles": {},
     "projectDirectories": {},
     "libraries": [

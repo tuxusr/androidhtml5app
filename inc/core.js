@@ -5,6 +5,11 @@ $( document ).ready(function() {
 	$("#projname").html(nomeApp);
 });
 
+// outros
+function carrega(id){
+    $("#"+id).html("<div id='carrega'><img src='../inc/loader.gif'></div>");
+}
+
 // links
 $("#capa").click(function() { 
     abrePagina("capa"); 
@@ -29,7 +34,7 @@ $("#servicos").click(function() {
 
 // teste com função usando json para capturar, via api, dados armazenados na mongolab
 function listabancos() {
-	$("#div_listabancos").html("Carregando...");
+	carrega("div_listabancos");
     $.getJSON( "https://api.mongolab.com/api/1/databases/cadastros/collections/servicos?apiKey=8nZcOZ7R2GL9ug6DuutJxxm8VspHmVDy", function( data ) {
         var items = [];
         var contador = 0;
@@ -46,6 +51,17 @@ function listabancos() {
 
 // funções diversas
 function abrePagina(pagina){
-	$("#conteudo").html("Carregando...");
+	carrega("conteudo");
 	$("#conteudo").load("pages/"+pagina+".htm");
+}
+
+// PÁGINA SERVIÇOS
+// quando estiver na página de cadastro, ao clicar no botão Listar serviços, será mostrado a listagem
+function listaServicos(){
+    carrega("conteudoservicos");
+    $('#conteudoservicos').load("../scripts/servicosNovo.htm");
+}
+// faz o cadastro de novos serviços
+function novoServico(){
+    
 }

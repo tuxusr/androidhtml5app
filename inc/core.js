@@ -7,7 +7,7 @@ $( document ).ready(function() {
 
 // outros
 function carrega(id){
-    $("#"+id).html("<div id='carrega'><img src='../inc/loader.gif'></div>");
+    $("#"+id).html("<div id='carrega'><img src='inc/loader.gif'></div>");
 }
 
 // links
@@ -57,11 +57,16 @@ function abrePagina(pagina){
 
 // PÁGINA SERVIÇOS
 // quando estiver na página de cadastro, ao clicar no botão Listar serviços, será mostrado a listagem
-function listaServicos(){
+function listarServicos(){
     carrega("conteudoservicos");
-    $('#conteudoservicos').load("../scripts/servicosNovo.htm");
+    $('#listar').hide();
+    $('#cadastrar').show();
+    $('#conteudoservicos').load("scripts/servicosLista.htm");
 }
 // faz o cadastro de novos serviços
 function novoServico(){
-    
+    carrega("conteudoservicos");
+    $('#listar').show();
+    $('#cadastrar').hide();
+    $('#conteudoservicos').load("scripts/servicosNovo.htm");
 }
